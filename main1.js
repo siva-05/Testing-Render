@@ -4,13 +4,15 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-// Replace these with your Render PostgreSQL connection details
+
+require('dotenv').config();
+
 const con = new Client({
-  host: 'cv1kn6tds78s73dvpds0-a.singapore-postgres.render.com', // e.g., something.render.com
-  user: 'renderpostgres',
-  port: 5432, // This might be different; check your Render settings
-  password: 'OkhebESMi03I80YLO26Rqej15rOpgCqq',
-  database: 'demodb_s0je',
+  host: process.env.PG_HOST,
+  port: process.env.PG_PORT,
+  user: process.env.PG_USER,
+  password: process.env.PG_PASSWORD,
+  database: process.env.PG_DATABASE,
   ssl: { rejectUnauthorized: false }
 });
 
