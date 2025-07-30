@@ -1,2 +1,2 @@
 REST API TUTORIAL CURD
-using node, express, postgresql
+using node, express, postgresql.
